@@ -1,0 +1,181 @@
+一、正确性测试
+1.空格
+{(3,0), (2,2), (12,3)} + {(3,1), (-5,3)} - {(-199,2), (29,3),(10,7)}
+{(3,0),(3,1),(201,2),(-22,3),(-10,7)}
+
+  {(3,  0), (2,2), (1   2,3)} +    {(  3,1 )  , (-5,3)} - {(-  199,2), (29  ,3),(  10,7)}
+{(3,0),(3,1),(201,2),(-22,3),(-10,7)}
+
+{(003,000), (0002,0002), (00012,03)} + {(003,01), (-0005,0003)} - {(-0199,2), (00029,3),(010,007)}
+{(3,0),(3,1),(201,2),(-22,3),(-10,7)}
+
+-{(-3,0), (-2,2), (-12,3)} - {(-3,1), (5,3)} - {(-199,2), (29,3),(10,7)}
+{(3,0),(3,1),(201,2),(-22,3),(-10,7)}
+
+{(0,0), (0,2), (0,3)} + {(0,1), (0,3)} - {(0,2), (0,3),(0,7)}
+{}
+
+{(-0,5)}
+{}
+
+{(0,0)}
+{}
+
+{(003,0), (02,2), (0001  2,3)} + {(03,1), (-5,0003)}  -{(-199,002), (29,3),(10,7)}
+{(3,0),(3,1),(201,2),(-22,3),(-10,7)}
+
+-{(5,2)} + {(3,6)} - {(3,6), (-5,2)}
+{}
+
+二、报错测试
+1.结尾中断
+{(3,0), (2,2), (12,3)} + {(3,1), (-5,3)} - {(-199,2), (29,3),(10,7)
+Error: illegal end
+
+{(3,0), (2,2), (12,3)} + {(3,1), (-5,3)} - {(-199,2), (29,3),(10,7
+Error: illegal end
+
+{(3,0), (2,2), (12,3)} + {(3,1), (-5,3)} -
+Error: illegal end
+
+{(3,0), (2,2), (12,3)} +
+Error: illegal end
+
+{
+Error: illegal end
+
+
+Error: illegal end
+
+2.括号
+{(3,0), (2,2, (12,3)} + {(3,1), (-5,3)} - {(-199,2), (29,3),(10,7)}
+Error: unexpected character ',' at 12.
+After having read 0 polynomials and 1 extra terms.
+
+
+{(3,0), (2,2), (12,3)} + {(3,1), (-5,3)} - (-199,2), (29,3),(10,7)}
+Error: unexpected character '(' at 37.
+After having read 2 polynomials and 0 extra terms.
+
+
+{(3,0), (2,2), (12,3)} + (3,1), (-5,3)} - {(-199,2), (29,3),(10,7)}
+Error: unexpected character '(' at 22.
+After having read 1 polynomials and 0 extra terms.
+
+(3,0), (2,2), (12,3)} + {(3,1), (-5,3)} - {(-199,2), (29,3),(10,7)}
+Error: unexpected character '(' at 1.
+After having read 0 polynomials and 0 extra terms.
+
+
+{(3,0), (2,2), (12,3))} + {(3,1), (-5,3)} - {(-199,2), (29,3),(10,7)}
+Error: unexpected character ')' at 20.
+After having read 0 polynomials and 3 extra terms.
+
+
+{{(3,0), (2,2), (12,3)} + {(3,1), (-5,3)} - {(-199,2), (29,3),(10,7)}
+Error: unexpected character '{' at 2.
+After having read 0 polynomials and 0 extra terms.
+
+{(3,0), (2,2), (12,3)} + {(3,1), (-5,3)} - {(-199,2), (29,3),(10,7)}}
+Error: unexpected character '}' at 61.
+After having read 3 polynomials and 0 extra terms.
+
+
+{(3,0), (2,2), (12,3)} + {(3,1)}, (-5,3)} - {(-199,2), (29,3),(10,7)}
+Error: unexpected character ',' at 29.
+After having read 2 polynomials and 0 extra terms.
+
+3.逗号
+{(3,0), (22), (12,3)} + {(3,1)}, (-5,3)} - {(-199,2), (29,3),(10,7)}
+Error: unexpected character ')' at 11.
+After having read 0 polynomials and 1 extra terms.
+
+{(3,0) (2,2), (12,3)} + {(3,1)}, (-5,3)} - {(-199,2), (29,3),(10,7)}
+Error: unexpected character '(' at 7.
+After having read 0 polynomials and 1 extra terms.
+
+
+{(3,0) ,(2,2), (12,3)} + {(3,1), (-5,3)} - {(-199,2), (29,3)(10,7)}
+Error: unexpected character '(' at 53.
+After having read 2 polynomials and 2 extra terms.
+
+4.数字
+{(3,0) ,(2,2), (12,)} + {(3,1), (-5,3)} - {(-199,2), (29,3),(10,7)}
+Error: unexpected character ')' at 18.
+After having read 0 polynomials and 2 extra terms.
+
+{(3,0), (2,2), (12,3)} + {(3,1), (-5,3)} - {(-,2), (29,3),(10,7)}
+Error: unexpected character ',' at 40.
+After having read 2 polynomials and 0 extra terms.
+
+{(3,0), (2,2), (12,3)} + {(,1), (-5,3)} - {(-199,2), (29,3),(10,7)}
+Error: unexpected character ',' at 24.
+After having read 1 polynomials and 0 extra terms.
+
+5.符号
+{(3,0), (2,2), (12,3)} {(3,1), (-5,3)} - {(-199,2), (29,3),(10,7)}
+Error: unexpected character '{' at 21.
+After having read 1 polynomials and 0 extra terms.
+
+{(3,0) ,(2,2), (12,3)} + {(3,1), (-5,3)} - {(-199,-2), (29,3),(10,7)}
+Error: illegal negative sign for degree at 44.
+After having read 2 polynomials and 0 extra terms.
+
+{(3,0), (2,2), (12,3)} + {(+3,1), (-5,3)} - {(-199,2), (29,3),(10,7)}
+Error: unexpected character '+' at 24.
+After having read 1 polynomials and 0 extra terms.
+
+{(3,0), (2,2), (12,-0)} + {(3,1), (-5,3)} -+ {(-199,2), (29,3),(10,7)}
+Error: illegal negative sign for degree at 18.
+After having read 0 polynomials and 2 extra terms.
+
+{(3,0), (2,2), (12,3)} + {(3,1), (--5,3)} - {(-199,2), (29,3),(10,7)}
+Error: unexpected character '-' at 31.
+After having read 1 polynomials and 1 extra terms.
+
++{(3,0), (2,2), (12,3)} + {(3,1), (-5,3)} - {(-199,2), (29,3),(10,7)}
+{(3,0),(3,1),(201,2),(-22,3),(-10,7)}
+
+--{(3,0), (2,2), (12,3)} + {(3,1), (-5,3)} - {(-199,2), (29,3),(10,7)}
+Error: unexpected character '-' at 2.
+After having read 0 polynomials and 0 extra terms.
+
+{(3,0), (2,2), (12,3)} + {(3,1), (-5,3)} - {(-199,2), (29,3),(10,7)}+
+Error: illegal end
+
+6.范围过大
+{(3,0), (2,2), (1000000,3)} + {(3,1), (-5,3)} - {(-199,2), (29,3),(10,7)}
+Error: coeff out of range at 21.
+After having read 0 polynomials and 2 extra terms.
+
+{(3,0), (2,2), (-1000000,3)} + {(3,1), (-5,3)} - {(-199,2), (29,3),(10,7)}
+Error: coeff out of range at 22.
+After having read 0 polynomials and 2 extra terms.
+
+{(3,0), (2,2), (-999999,3)} + {(3,1), (-5,3)} - {(-199,2), (29,3),(10,7)}
+{(3,0),(3,1),(201,2),(-1000033,3),(-10,7)}
+
+{(3,0), (2,2), (-999999,3000000)} + {(3,1), (-5,3)} - {(-199,2), (29,3),(10,7)}
+Error: degree out of range at 29.
+After having read 0 polynomials and 2 extra terms.
+
+7.重复deg
+{(2,5), (-2,5)}
+Error: same degrees at 13.
+After having read 0 polynomials and 1 extra terms.
+
+{(3,0), (2,2), (12,3)} + {(3,3), (-5,3)} - {(-199,2), (29,3),(10,7)}
+Error: same degrees at 34.
+After having read 1 polynomials and 1 extra terms.
+
+{(3,0), (2,2), (12,3)} + {(0,1), (-0,1)} - {(-199,2), (29,3),(10,7)}
+Error: same degrees at 34.
+After having read 1 polynomials and 1 extra terms.
+
+8.过多
+{(1,2)} + {(1,2)} + {(1,2)} + {(1,2)} + {(1,2)} + {(1,2)} + {(1,2)} + {(1,2)} + {(1,2)} + {(1,2)} + {(1,2)} + {(1,2)} + {(1,2)} + {(1,2)} + {(1,2)} + {(1,2)} + {(1,2)} + {(1,2)} + {(1,2)} + {(1,2)} + {(1,2)}
+Error: too many polynomials at 167.
+After having read 21 polynomials and 0 extra terms.
+
+{(1,2)} + {(1,2)} + {(1,2)} + {(1,2)} + {(1,2)} + {(1,2)} + {(1,2)} + {(1,2)} + {(1,2)} + {(1,2)} + {(1,2)} + {(1,2)} + {(1,2)} + {(1,2)} + {(1,2)} + {(1,2)} + {(1,2)} + {(1,2)} + {(1,2)} + {(1,2)} + {(
+Error: illegal end

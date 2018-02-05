@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassDiagram>
+    <Class name="ooProject07.Request" x="646" y="36">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="ooProject07.CRrequest" x="902" y="32">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="ooProject07.Request"/>
+        <Association destinationClassName="ooProject07.MapNode"
+            endpointName="startingNode" kind="Simple"/>
+        <Association destinationClassName="ooProject07.MapNode"
+            endpointName="terminalNode" kind="Simple"/>
+        <Association destinationClassName="ooProject07.TaxiMap"
+            endpointName="taxiMap" kind="Simple"/>
+        <Association destinationClassName="ooProject07.OutputHandle"
+            endpointName="outputHandle" kind="Simple"/>
+        <Association destinationClassName="ooProject07.Taxi"
+            endpointName="grappingTaxis" kind="Simple"/>
+        <Communication destinationClassName="ooProject07.MapWay"/>
+        <Communication destinationClassName="ooProject07.OutputHandle"/>
+        <Communication destinationClassName="ooProject07.InfoHandle"/>
+        <Communication destinationClassName="ooProject07.Taxi"/>
+        <Communication destinationClassName="ooProject07.MapNode"/>
+    </Class>
+    <Class name="ooProject07.TaxiState" x="673" y="652">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="ooProject07.TaxiMap" x="1281" y="341">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="ooProject07.InfoHandle"/>
+        <Communication destinationClassName="ooProject07.MapNode"/>
+    </Class>
+    <Class name="ooProject07.Runner" x="277" y="460">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="ooProject07.InputHandle"/>
+    </Class>
+    <Class name="ooProject07.RequestInputHandle" x="1553" y="287">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="ooProject07.Share"
+            endpointName="share" kind="Simple"/>
+        <Association destinationClassName="ooProject07.TaxiMap"
+            endpointName="taxiMap" kind="Simple"/>
+        <Association destinationClassName="ooProject07.OutputHandle"
+            endpointName="outputHandle" kind="Simple"/>
+        <Communication destinationClassName="ooProject07.TaxiMap"/>
+        <Communication destinationClassName="ooProject07.InfoHandle"/>
+        <Communication destinationClassName="ooProject07.Share"/>
+    </Class>
+    <Class name="ooProject07.SearchMap" x="1008" y="709">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="ooProject07.TaxiMap"
+            endpointName="taxiMap" kind="Simple"/>
+        <Communication destinationClassName="ooProject07.TaxiMap"/>
+        <Communication destinationClassName="ooProject07.MapNode"/>
+        <Communication destinationClassName="ooProject07.SearchMapNode"/>
+    </Class>
+    <Class name="ooProject07.SearchMapNode" x="91" y="41">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="ooProject07.MapNode"
+            endpointName="mapNode" kind="Simple"/>
+        <Association destinationClassName="ooProject07.SearchMapNode"
+            endpointName="backSearchNode" kind="Simple"/>
+        <Communication destinationClassName="ooProject07.Direction"/>
+        <Communication destinationClassName="ooProject07.MapNode"/>
+        <Communication destinationClassName="ooProject07.SearchMap"/>
+    </Class>
+    <Class name="ooProject07.MapWay" x="480" y="475">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="ooProject07.MapNode"
+            endpointName="startingNode" kind="Simple"/>
+        <Association destinationClassName="ooProject07.MapNode"
+            endpointName="terminalNode" kind="Simple"/>
+        <Communication destinationClassName="ooProject07.SearchMapNode"/>
+    </Class>
+    <Class name="ooProject07.OutputHandle" x="1353" y="19">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="ooProject07.CRrequest"/>
+        <Communication destinationClassName="ooProject07.InfoHandle"/>
+    </Class>
+    <Class name="ooProject07.InfoHandle" x="273" y="248">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="ooProject07.InputHandle" x="1649" y="553">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="ooProject07.TaxiMap"
+            endpointName="taxiMap" kind="Simple"/>
+        <Communication destinationClassName="ooProject07.TaxiMap"/>
+        <Communication destinationClassName="ooProject07.InfoHandle"/>
+    </Class>
+    <Class name="ooProject07.Direction" x="275" y="314">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="ooProject07.Share" x="1422" y="675">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="ooProject07.CRrequest"
+            endpointName="unactivatedCRList" kind="Simple"/>
+        <Association destinationClassName="ooProject07.Taxi"
+            endpointName="taxis" kind="Simple"/>
+        <Association destinationClassName="ooProject07.TaxiMap"
+            endpointName="taxiMap" kind="Simple"/>
+        <Association destinationClassName="ooProject07.OutputHandle"
+            endpointName="outputHandle" kind="Simple"/>
+        <Communication destinationClassName="ooProject07.CRrequest"/>
+        <Communication destinationClassName="ooProject07.TaxiMap"/>
+        <Communication destinationClassName="ooProject07.OutputHandle"/>
+        <Communication destinationClassName="ooProject07.InfoHandle"/>
+        <Communication destinationClassName="ooProject07.Taxi"/>
+    </Class>
+    <Class name="ooProject07.Taxi" x="876" y="392">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="ooProject07.MapNode"
+            endpointName="terminalNode" kind="Simple"/>
+        <Association destinationClassName="ooProject07.CRrequest"
+            endpointName="crTask" kind="Simple"/>
+        <Association destinationClassName="ooProject07.Share"
+            endpointName="share" kind="Simple"/>
+        <Association destinationClassName="ooProject07.TaxiMap"
+            endpointName="taxiMap" kind="Simple"/>
+        <Association destinationClassName="ooProject07.TaxiState"
+            endpointName="state" kind="Simple"/>
+        <Association destinationClassName="ooProject07.OutputHandle"
+            endpointName="outputHandle" kind="Simple"/>
+        <Association destinationClassName="ooProject07.MapWay"
+            endpointName="way" kind="Simple"/>
+        <Association destinationClassName="ooProject07.MapNode"
+            endpointName="positionNode" kind="Simple"/>
+        <Communication destinationClassName="ooProject07.MapWay"/>
+        <Communication destinationClassName="ooProject07.CRrequest"/>
+        <Communication destinationClassName="ooProject07.TaxiMap"/>
+        <Communication destinationClassName="ooProject07.OutputHandle"/>
+        <Communication destinationClassName="ooProject07.InfoHandle"/>
+        <Communication destinationClassName="ooProject07.Direction"/>
+        <Communication destinationClassName="ooProject07.Share"/>
+        <Communication destinationClassName="ooProject07.SearchMap"/>
+        <Communication destinationClassName="ooProject07.MapNode"/>
+    </Class>
+    <Class name="ooProject07.MapNode" x="529" y="220">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="ooProject07.MapNode"
+            endpointName="toNode" kind="Simple"/>
+    </Class>
+</ClassDiagram>

@@ -1,0 +1,4 @@
+renamed: 2
+modified: 0
+path_changed: 0
+size_changed: 0

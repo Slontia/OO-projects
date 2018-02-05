@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassDiagram>
+    <Class name="ooProject02.ExpHandler" x="1290" y="496">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="ooProject02.Floor" x="1213" y="200">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="ooProject02.FloorRequest"
+            endpointName="downFloorRequest" kind="Simple"/>
+        <Association destinationClassName="ooProject02.FloorRequest"
+            endpointName="upFloorRequest" kind="Simple"/>
+    </Class>
+    <Class name="ooProject02.ElevatorMovement" x="319" y="413">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="ooProject02.Elevator" x="21" y="20">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="ooProject02.ElevatorMovement"/>
+        <Association destinationClassName="ooProject02.ElevatorRequest"
+            endpointName="eRequests" kind="Simple"/>
+        <Association destinationClassName="ooProject02.Direction"
+            endpointName="direction" kind="Simple"/>
+        <Communication destinationClassName="ooProject02.ExpHandler"/>
+        <Communication destinationClassName="ooProject02.Request"/>
+        <Communication destinationClassName="ooProject02.FloorList"/>
+    </Class>
+    <Class name="ooProject02.FloorList" x="1058" y="23">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="ooProject02.Floor"
+            endpointName="floors" kind="Simple"/>
+        <Communication destinationClassName="ooProject02.Floor"/>
+        <Communication destinationClassName="ooProject02.Request"/>
+    </Class>
+    <Class name="ooProject02.DispatcherTaking" x="1027" y="198">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="ooProject02.Dispatcher"/>
+        <Association destinationClassName="ooProject02.Request"
+            endpointName="mainRequest" kind="Simple"/>
+        <Communication destinationClassName="ooProject02.ExpHandler"/>
+        <Communication destinationClassName="ooProject02.FloorRequest"/>
+        <Communication destinationClassName="ooProject02.ElevatorRequest"/>
+        <Communication destinationClassName="ooProject02.Request"/>
+        <Communication destinationClassName="ooProject02.Elevator"/>
+        <Communication destinationClassName="ooProject02.FloorList"/>
+        <Communication destinationClassName="ooProject02.RequestQueue"/>
+        <Communication destinationClassName="ooProject02.Dispatcher"/>
+    </Class>
+    <Class name="ooProject02.InstrReader" x="1292" y="388">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="ooProject02.RequestQueue" x="500" y="15">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="ooProject02.ExpHandler"/>
+        <Communication destinationClassName="ooProject02.Request"/>
+    </Class>
+    <Class name="ooProject02.FloorRequest" x="1021" y="413">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="ooProject02.Request"/>
+        <Association destinationClassName="ooProject02.Direction"
+            endpointName="dir" kind="Simple"/>
+        <Communication destinationClassName="ooProject02.Request"/>
+    </Class>
+    <Class name="ooProject02.ElevatorRequest" x="554" y="261">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="ooProject02.Request"/>
+        <Communication destinationClassName="ooProject02.Request"/>
+    </Class>
+    <Class name="ooProject02.Request" x="775" y="224">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="ooProject02.RequestSource"
+            endpointName="rSource" kind="Simple"/>
+        <Communication destinationClassName="ooProject02.FloorRequest"/>
+        <Communication destinationClassName="ooProject02.ExpHandler"/>
+        <Communication destinationClassName="ooProject02.ElevatorRequest"/>
+    </Class>
+    <Class name="ooProject02.Direction" x="735" y="470">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="ooProject02.RequestSource" x="725" y="361">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="ooProject02.ElevatorRunner" x="1291" y="445">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="ooProject02.ExpHandler"/>
+        <Communication destinationClassName="ooProject02.FloorRequest"/>
+        <Communication destinationClassName="ooProject02.Request"/>
+        <Communication destinationClassName="ooProject02.DispatcherTaking"/>
+        <Communication destinationClassName="ooProject02.InstrReader"/>
+        <Communication destinationClassName="ooProject02.RequestQueue"/>
+    </Class>
+    <Class name="ooProject02.Dispatcher" x="776" y="52">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="ooProject02.FloorList"
+            endpointName="floorList" kind="Simple"/>
+        <Association destinationClassName="ooProject02.Elevator"
+            endpointName="elevator" kind="Simple"/>
+        <Association destinationClassName="ooProject02.Request"
+            endpointName="requestsList" kind="Simple"/>
+        <Association destinationClassName="ooProject02.RequestQueue"
+            endpointName="rQueue" kind="Simple"/>
+        <Communication destinationClassName="ooProject02.ExpHandler"/>
+        <Communication destinationClassName="ooProject02.Elevator"/>
+        <Communication destinationClassName="ooProject02.FloorList"/>
+        <Communication destinationClassName="ooProject02.RequestQueue"/>
+    </Class>
+</ClassDiagram>
